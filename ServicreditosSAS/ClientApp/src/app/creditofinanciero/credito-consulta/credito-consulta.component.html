@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-6">
+    <input [(ngModel)]="searchText" type="text" class="formcontrol" placeholder="Type to filter">
+    </div>
+    </div>
+    <hr>
+    <table class="table table-striped" *ngIf='creditos && creditos.length'>
+    <thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">Identificación</th>
+    <th scope="col">Nombre </th>
+    <th scope="col">Capital Inicial</th>
+    <th scope="col">Tasa Interes</th>
+    <th scope="col">Tiempo De Duracion</th>
+    <th scope="col">Valor Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let credito of creditos; index as i ">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ credito.identificacion }} </td>
+    <td>{{ credito.nombre }}</td>
+    <td>{{ credito.capitalinicial }}</td>
+    <td>{{ credito.tasainteres }}</td>
+    <td>{{ credito.tiempoduracioncredito }}</td>
+    <td>{{ credito.valortotal }}</td>
+    </tr>
+    </tbody>
+    </table>
